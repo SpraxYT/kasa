@@ -1,0 +1,27 @@
+@use 'sass:map';
+@use 'variables' as *;
+
+// Desktop First - on cible les écrans plus petits
+@mixin respond-to($breakpoint) {
+  @if map.has-key($breakpoints, $breakpoint) {
+    @media (max-width: map.get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  }
+}
+
+// Utilitaire pour les marges et paddings responsive
+@mixin spacing-responsive($property, $desktop-value, $mobile-value) {
+  #{$property}: $desktop-value;
+  
+  @include respond-to(mobile) {
+    #{$property}: $mobile-value;
+  }
+}
+
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

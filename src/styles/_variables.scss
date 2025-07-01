@@ -1,0 +1,17 @@
+// Couleurs
+$primary-color: #FF6060;
+$secondary-color: #F6F6F6;
+$text-color: #000000;
+$white: #FFFFFF;
+
+// Breakpoints pour Desktop First
+$breakpoints: (
+  tablet: 768px,
+  mobile: 375px  // Pour cibler les appareils jusqu'à 375px (couvre votre maquette 345px)
+);
+
+// Espacements
+$spacing-unit: 8px;
+$spacing-small: $spacing-unit;
+$spacing-medium: $spacing-unit * 2;
+$spacing-large: $spacing-unit * 3;

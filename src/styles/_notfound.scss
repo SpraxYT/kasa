@@ -1,0 +1,70 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.not-found {
+    display: flex;
+    flex-direction: column;
+    height: 50vh;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+    color: $primary-color;
+
+    h1 {
+        font-size: 288px;
+        font-weight: 700;
+        margin: 0;
+
+        @include respond-to(tablet) {
+            font-size: 200px;
+        }
+
+        @include respond-to(mobile) {
+            font-size: 96px;
+        }
+    }
+
+    p {
+        font-size: 36px;
+        margin: 2rem 0;
+        text-align: center;
+
+        span {
+            display: inline;
+        }
+
+        br {
+            display: none;
+        }
+
+        @include respond-to(tablet) {
+            font-size: 28px;
+        }
+
+        @include respond-to(mobile) {
+            font-size: 18px;
+            width: 260px;
+
+            span {
+                display: inline-block;
+                white-space: nowrap;
+            }
+
+            br {
+                display: block;
+            }
+        }
+    }
+
+    &__link {
+        color: $text-color;
+        font-size: 18px;
+        text-decoration: underline;
+        margin-top: 2rem;
+
+        @include respond-to(mobile) {
+            font-size: 14px;
+        }
+    }
+}

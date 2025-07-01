@@ -1,0 +1,64 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.collapse-element {
+    width: 100%;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    overflow: hidden;
+
+    .collapse-header {
+        width: 100%;
+        padding: 10px 15px;
+        background-color: $primary-color;
+        border: none;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+
+        h3 {
+            color: $white;
+            font-size: 18px;
+            margin: 0;
+        }
+
+        .collapse-arrow {
+            width: 24px;
+            height: 24px;
+            transition: transform 0.3s ease;
+
+            &.open {
+                transform: rotate(180deg);
+            }
+        }
+    }
+
+    .collapse-content {
+        background-color: $secondary-color;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-in-out;
+
+        &.open {
+            max-height: 500px; // Ajustez selon vos besoins
+        }
+
+        .collapse-text {
+            padding: 20px 15px;
+            color: $text-color;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+    }
+
+    @include respond-to(mobile) {
+        .collapse-header h3 {
+            font-size: 13px;
+        }
+
+        .collapse-text {
+            font-size: 12px;
+        }
+    }
+}
