@@ -1,0 +1,137 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.logement {
+    margin-top: 30px;
+
+    &__content {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-top: 30px;
+
+        @include respond-to(mobile) {
+            flex-direction: column;
+        }
+    }
+
+    &__left {
+        flex: 1;
+        margin-right: 20px;
+
+        @include respond-to(mobile) {
+            margin-right: 0;
+            margin-bottom: 16px;
+        }
+    }
+
+    &__right {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 20px;
+
+        @include respond-to(mobile) {
+            flex-direction: row-reverse;
+            justify-content: space-between;
+            width: 100%;
+            align-items: center;
+        }
+    }
+
+    &__informations {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        h1 {
+            color: $primary-color;
+            font-size: 36px;
+            font-weight: 500;
+            margin: 0;
+
+            @include respond-to(tablet) {
+                font-size: 24px;
+            }
+
+            @include respond-to(mobile) {
+                font-size: 18px;
+            }
+        }
+
+        p {
+            color: $text-color;
+            font-size: 18px;
+            margin: 0;
+            font-weight: 500;
+
+            @include respond-to(tablet) {
+                font-size: 16px;
+            }
+
+            @include respond-to(mobile) {
+                font-size: 14px;
+            }
+        }
+    }
+
+    &__tags {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 10px;
+    }
+
+    &__host {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        p {
+            color: $primary-color;
+            font-size: 18px;
+            margin: 0;
+            text-align: right;
+            width: 93px;
+
+            @include respond-to(mobile) {
+                font-size: 12px;
+                width: 50px;
+            }
+        }
+
+        img {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            object-fit: cover;
+
+            @include respond-to(mobile) {
+                width: 32px;
+                height: 32px;
+            }
+        }
+    }
+
+    &__details {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 76px;
+        margin-top: 24px;
+
+        @include respond-to(mobile) {
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+    }
+
+    &__equipments {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        color: $text-color;
+
+        li {
+            margin-bottom: 5px;
+        }
+    }
+}

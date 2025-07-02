@@ -1,0 +1,21 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.tag {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3px 30px;
+    background-color: $primary-color;
+    color: white;
+    border-radius: 10px;
+    font-size: 14px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+
+    @include respond-to(mobile) {
+        font-size: 10px;
+        padding: 3px 20px;
+        margin-right: 5px;
+    }
+}

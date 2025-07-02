@@ -1,0 +1,14 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.rating {
+    display: flex;
+    gap: 10px;
+
+    svg {
+        @include respond-to(mobile) {
+            width: 15px;
+            height: 15px;
+        }
+    }
+}
